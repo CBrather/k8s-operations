@@ -1,0 +1,6 @@
+loki:
+  serviceName: loki
+
+config:
+  clients:
+    - url: https://{API_KEY}@logs-prod-013.grafana.net/api/prom/push
