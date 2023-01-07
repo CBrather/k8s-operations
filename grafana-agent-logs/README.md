@@ -1,0 +1,1 @@
+Chart based on https://raw.githubusercontent.com/grafana/agent/v0.27.1/production/kubernetes/agent-loki.yaml
