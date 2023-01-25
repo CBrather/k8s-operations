@@ -16,5 +16,5 @@ data:
         remote_write:
           - endpoint: https://tempo-prod-08-prod-eu-west-3.grafana.net:443
             basic_auth:
-              username: $(GRAFANA_TEMPO_USERNAME)
-              password: $(GRAFANA_TEMPO_PASSWORD)
+              username: $(Grafana-Traces-User)
+              password: $(Grafana-Traces-API-Key)

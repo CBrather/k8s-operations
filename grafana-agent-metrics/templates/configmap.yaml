@@ -3,7 +3,7 @@ metadata:
   name: grafana-agent-metrics
 apiVersion: v1
 data:
-  agent.yaml: |    
+  agent.yaml: |
     metrics:
       wal_directory: /var/lib/agent/wal
       global:
@@ -15,8 +15,8 @@ data:
         remote_write:
         - url: https://prometheus-prod-22-prod-eu-west-3.grafana.net/api/prom/push
           basic_auth:
-            username: $(GRAFANA_PROM_USERNAME)
-            password: $(GRAFANA_PROM_PASSWORD)
+            username: $(Grafana-Metrics-User)
+            password: $(Grafana-Metrics-API-Key)
         scrape_configs:
         - bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
           job_name: integrations/kubernetes/cadvisor
@@ -75,7 +75,7 @@ data:
         - job_name: tempo/service-graphs
           static_configs:
             - targets: ["grafana-agent-traces.telemetry.svc.cluster.local:80"]
-        
+
     integrations:
       eventhandler:
         cache_path: /var/lib/agent/eventhandler.cache
@@ -87,8 +87,8 @@ data:
         clients:
         - url: https://logs-prod-013.grafana.net/loki/api/v1/push
           basic_auth:
-            username: $(GRAFANA_LOKI_USERNAME)
-            password: $(GRAFANA_LOKI_PASSWORD)
+            username: $(Grafana-Logs-User)
+            password: $(Grafana-Logs-API-Key)
           external_labels:
             cluster: cloud
             job: integrations/kubernetes/eventhandler
