@@ -11,5 +11,8 @@ spec:
   - name: grafana-agent-grpc-traces
     port: 4317
     targetPort: 4317
+  - name: http-metrics
+    port: 80
+    targetPort: 80
   selector:
     name: grafana-agent-traces

@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: grafana-agent
+  name: grafana-agent-metrics
 rules:
 - apiGroups:
   - ""
@@ -24,12 +24,12 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: grafana-agent
+  name: grafana-agent-metrics
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: grafana-agent
+  name: grafana-agent-metrics
 subjects:
 - kind: ServiceAccount
-  name: grafana-agent
+  name: grafana-agent-metrics
   namespace: telemetry
